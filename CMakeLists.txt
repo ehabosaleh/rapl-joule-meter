@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(Energy VERSION 1.0.0 LANGUAGES C)
+project(Energy VERSION 1.0.0 LANGUAGES C CXX)
 
 file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c)
 #set(SOURCES src/energy.c)
@@ -47,3 +47,10 @@ install(FILES
     	${CMAKE_CURRENT_BINARY_DIR}/RaplConfigVersion.cmake
 	DESTINATION lib/cmake/Rapl
 )
+
+
+enable_testing()
+find_package(Rapl REQUIRED CONFIG)
+add_executable(rapl_test ${CMAKE_CURRENT_SOURCE_DIR}/tests/main/saxpy.cpp )
+target_link_libraries(rapl_test PRIVATE rapl::rapl)
+add_test(NAME saxpy_test COMMAND rapl_test)
