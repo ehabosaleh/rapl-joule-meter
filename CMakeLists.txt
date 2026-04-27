@@ -50,7 +50,6 @@ install(FILES
 
 
 enable_testing()
-#find_package(Rapl REQUIRED CONFIG)
 add_executable(rapl_test ${CMAKE_CURRENT_SOURCE_DIR}/tests/main/saxpy.cpp )
 target_link_libraries(rapl_test PRIVATE rapl::rapl)
 add_test(NAME saxpy_test COMMAND rapl_test)
