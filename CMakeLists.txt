@@ -9,7 +9,7 @@ target_include_directories(rapl PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_
 
 target_compile_features(rapl PUBLIC c_std_99)
 
-add_library(rapl:rapl ALIAS rapl)
+add_library(rapl::rapl ALIAS rapl)
 
 install(TARGETS rapl 
 	EXPORT rapl_targets 
@@ -50,7 +50,7 @@ install(FILES
 
 
 enable_testing()
-find_package(Rapl REQUIRED CONFIG)
+#find_package(Rapl REQUIRED CONFIG)
 add_executable(rapl_test ${CMAKE_CURRENT_SOURCE_DIR}/tests/main/saxpy.cpp )
 target_link_libraries(rapl_test PRIVATE rapl::rapl)
 add_test(NAME saxpy_test COMMAND rapl_test)
