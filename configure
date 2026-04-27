@@ -11,7 +11,7 @@ for arg in "$@"; do
 		--prefix=*)
 			PREFIX="${arg#*=}"
 			;;
-		--help=*)
+		--help*)
 			echo "Usage: ./configure [--prefix=PATH]"
 			exit 0
 			;;
