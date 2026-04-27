@@ -18,5 +18,5 @@ char* package_energy_path();
 char* core_energy_path();
 char* core_max_energy_path();
 char* package_max_energy_path();
-
+double time_s();
 #endif
