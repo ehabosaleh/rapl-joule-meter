@@ -3,7 +3,7 @@
 if [ -d "$PWD/build" ]; then
 	rm -rf "$PWD/build"
 fi
-PREFIX="/usr/local/rapel"
+PREFIX="/usr/local/rapl"
 BUILD_DIR="build"
 
 for arg in "$@"; do 
