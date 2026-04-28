@@ -7,7 +7,6 @@ This library provides simple utilities to:
 
 * Read energy consumption counters from the system (`energy_uj`)
 * Measure elapsed time with high-resolution timers
-* Handle counter wrap-around safely
 * Locate RAPL energy files for CPU package and core domains
 
 ---
@@ -85,7 +84,7 @@ You can simple run the bash script `configure` and pass the path where you want 
 ```bash
 Usage: ./configure [--prefix=INSTALLATION_PATH]
 ```
-***Or***
+**Or**
 
 ```bash
 cmake -S . -B build
@@ -96,6 +95,7 @@ and then nstall:
 ```bash
 cmake --install build
 ```
+the libray will be installed in the default path `/usr/local/rapl`
 
 ---
 
